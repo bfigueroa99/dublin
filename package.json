@@ -2,6 +2,7 @@
   "name": "dublin",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://bfigueroa99.github.io/dublin",
   "type": "module",
   "scripts": {
     "dev": "vite",
