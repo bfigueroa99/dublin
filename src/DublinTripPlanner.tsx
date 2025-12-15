@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Calendar, MapPin, Clock, Check, ChevronDown, ChevronUp, AlertCircle } from 'lucide-react';
 
 const DublinTripPlanner = () => {
-  const [expandedDay, setExpandedDay] = useState(null);
-  const [checkedItems, setCheckedItems] = useState({});
+  const [expandedDay, setExpandedDay] = useState<number | null>(null);
+  const [checkedItems, setCheckedItems] = useState<Record<number, boolean>>({});
 
   const itinerary = [
     {
@@ -174,11 +174,11 @@ const DublinTripPlanner = () => {
     }
   ];
 
-  const toggleDay = (index) => {
+  const toggleDay = (index: number) => {
     setExpandedDay(expandedDay === index ? null : index);
   };
 
-  const toggleTask = (taskId) => {
+  const toggleTask = (taskId: number) => {
     setCheckedItems(prev => ({
       ...prev,
       [taskId]: !prev[taskId]
