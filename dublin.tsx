@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, MapPin, Clock, Check, ChevronDown, ChevronUp, AlertCircle, ExternalLink } from 'lucide-react';
+import { Calendar, MapPin, Clock, Check, ChevronDown, ChevronUp, AlertCircle, ExternalLink, Ticket } from 'lucide-react';
 
 const DublinTripPlanner = () => {
   const [expandedDay, setExpandedDay] = useState(null);
@@ -14,7 +14,7 @@ const DublinTripPlanner = () => {
       icon: "🛬",
       tasks: [
         { id: 1, text: "Aterrizaje 20:25 (Ryanair desde Birmingham)" },
-        { id: 2, text: "Tomar Aircoach 700 o Dublin Express 782 en Terminal" },
+        { id: 2, text: "Tomar Aircoach 700 o Dublin Express 782 en Terminal", ticketUrl: "https://www.aircoach.ie/" },
         { id: 3, text: "Bajar en O'Connell Bridge/Aston Quay", mapUrl: "https://www.google.com/maps/search/?api=1&query=O'Connell+Bridge+Dublin" },
         { id: 4, text: "Check-in en Clink i Lár (O'Connell St)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Clink+i+Lár+Dublin" },
         { id: 5, text: "🍔 CENA: Supermac's (abierto hasta 2 AM) - Pide 'Curry Cheese Chips'", mapUrl: "https://www.google.com/maps/search/?api=1&query=Supermac's+O'Connell+Street+Dublin" },
@@ -30,7 +30,8 @@ const DublinTripPlanner = () => {
       icon: "🏔️",
       tasks: [
         { id: 7, text: "05:30 - Desayuno rápido en Spar O'Connell St (24h)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Spar+O'Connell+Street+Dublin" },
-        { id: 8, text: "06:30 - Salida del tour (Revisar ticket: Molly Malone o Gresham)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Molly+Malone+Statue+Dublin" },
+        { id: 69, text: "⛪ MISA: Buscar iglesia en Killarney durante la parada (difícil por horario tour)" },
+        { id: 8, text: "06:30 - Salida del tour (Revisar ticket: Molly Malone o Gresham)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Molly+Malone+Statue+Dublin", ticketUrl: "https://paddywagontours.com/" },
         { id: 9, text: "En ruta: Parque Nacional Killarney + Torc Waterfall", mapUrl: "https://www.google.com/maps/search/?api=1&query=Torc+Waterfall+Killarney" },
         { id: 10, text: "Parada en Skellig Views (donde filmaron Star Wars)" },
         { id: 11, text: "Pueblos: Killarney, Kenmare" },
@@ -45,9 +46,9 @@ const DublinTripPlanner = () => {
       location: "Smithfield → St James's Gate → Temple Bar",
       icon: "🍺",
       tasks: [
-        { id: 13, text: "11:00 - Jameson Distillery Bow St (Smithfield) - LUAS Rojo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Jameson+Distillery+Bow+St" },
+        { id: 13, text: "11:00 - Jameson Distillery Bow St (Smithfield) - LUAS Rojo", mapUrl: "https://www.google.com/maps/search/?api=1&query=Jameson+Distillery+Bow+St", ticketUrl: "https://www.jamesonwhiskey.com/en-ie/visit-us/jameson-distillery-bow-st/" },
         { id: 14, text: "12:30 - Almuerzo en The Brazen Head (pub de 1198, el más antiguo)", mapUrl: "https://www.google.com/maps/search/?api=1&query=The+Brazen+Head+Dublin" },
-        { id: 15, text: "14:00 - GUINNESS STOREHOUSE (Entrada reservada)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Guinness+Storehouse+Dublin" },
+        { id: 15, text: "14:00 - GUINNESS STOREHOUSE (Entrada reservada)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Guinness+Storehouse+Dublin", ticketUrl: "https://www.guinness-storehouse.com/en/tickets" },
         { id: 16, text: "Dentro: Ticket pinta gratis + Gravity Bar (vistas 360°)" },
         { id: 17, text: "17:00 - Caminar a TEMPLE BAR (20 min desde Guinness)", mapUrl: "https://www.google.com/maps/search/?api=1&query=The+Temple+Bar+Pub+Dublin" },
         { id: 18, text: "🎵 Temple Bar: Zona de pubs con música en vivo" },
@@ -63,9 +64,9 @@ const DublinTripPlanner = () => {
       icon: "🦌",
       tasks: [
         { id: 20, text: "10:00 - Trinity College (entrada gratis a patios)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Trinity+College+Dublin" },
-        { id: 21, text: "Opcional: Book of Kells (€16) o Chester Beatty Library (gratis)", mapUrl: "https://www.google.com/maps/search/?api=1&query=The+Book+of+Kells+Dublin" },
+        { id: 21, text: "Opcional: Book of Kells (€16) o Chester Beatty Library (gratis)", mapUrl: "https://www.google.com/maps/search/?api=1&query=The+Book+of+Kells+Dublin", ticketUrl: "https://www.visittrinity.ie/book-of-kells/" },
         { id: 22, text: "12:30 - LUAS Rojo a Heuston Station" },
-        { id: 23, text: "Alquilar bici en Phoenix Park Bikes (entrada Parkgate St)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Phoenix+Park+Bikes+Dublin" },
+        { id: 23, text: "Alquilar bici en Phoenix Park Bikes (entrada Parkgate St)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Phoenix+Park+Bikes+Dublin", ticketUrl: "https://www.phoenixparkbikes.com/" },
         { id: 24, text: "🚴 Ruta: Cruz Papal → Ver ciervos (Fallow Deer)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Papal+Cross+Phoenix+Park" },
         { id: 25, text: "Ver Áras an Uachtaráin (Casa del Presidente)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Áras+an+Uachtaráin" },
         { id: 26, text: "15:00 - Devolver bici y volver al centro" },
@@ -100,6 +101,7 @@ const DublinTripPlanner = () => {
       icon: "🏙️",
       tasks: [
         { id: 37, text: "Desayuno tranquilo con tus compras de ayer" },
+        { id: 68, text: "⛪ 10:00 - Misa de Navidad en St Mary's Pro-Cathedral (Marlborough St)", mapUrl: "https://www.google.com/maps/search/?api=1&query=St+Mary's+Pro-Cathedral+Dublin" },
         { id: 38, text: "11:00 - Paseo por Dublín vacío (experiencia única)" },
         { id: 39, text: "Ruta: Río Liffey hacia Dublin Docklands" },
         { id: 40, text: "Ver: Samuel Beckett Bridge (forma de arpa)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Samuel+Beckett+Bridge+Dublin" },
@@ -134,7 +136,7 @@ const DublinTripPlanner = () => {
       location: "O'Connell St → Ciudad",
       icon: "🎫",
       tasks: [
-        { id: 52, text: "10:00 - Tomar bus turístico en O'Connell St (€25-30)", mapUrl: "https://www.google.com/maps/search/?api=1&query=City+Sightseeing+Dublin+O'Connell+Street" },
+        { id: 52, text: "10:00 - Tomar bus turístico en O'Connell St (€25-30)", mapUrl: "https://www.google.com/maps/search/?api=1&query=City+Sightseeing+Dublin+O'Connell+Street", ticketUrl: "https://city-sightseeing.com/en/16/dublin" },
         { id: 53, text: "Vuelta completa para ver: Kilmainham Gaol, Catedrales" },
         { id: 54, text: "12:00 - Bajar en Kildare St" },
         { id: 55, text: "Museo Nacional de Arqueología (GRATIS - Oros celtas)", mapUrl: "https://www.google.com/maps/search/?api=1&query=National+Museum+of+Ireland+Archaeology" },
@@ -156,10 +158,11 @@ const DublinTripPlanner = () => {
         { id: 61, text: "04:00 - Despertarse (múltiples alarmas)" },
         { id: 62, text: "04:15 - Check-out Clink i Lár", mapUrl: "https://www.google.com/maps/search/?api=1&query=Clink+i+Lár+Dublin" },
         { id: 63, text: "04:20 - Caminar 3 min a parada Aircoach (frente a Gresham Hotel)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Gresham+Hotel+Dublin" },
-        { id: 64, text: "04:30 - Tomar Aircoach 700 (servicio 24h, cada 15 min)" },
+        { id: 64, text: "04:30 - Tomar Aircoach 700 (servicio 24h, cada 15 min)", ticketUrl: "https://www.aircoach.ie/" },
         { id: 65, text: "05:00 - Llegada a Dublin Airport (Terminal 1)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Dublin+Airport+Terminal+1" },
         { id: 66, text: "07:10 - Vuelo Ryanair FR 660 a Birmingham" },
-        { id: 67, text: "08:15 - Aterrizaje en Birmingham" }
+        { id: 67, text: "08:15 - Aterrizaje en Birmingham" },
+        { id: 70, text: "⛪ Ir a misa en Birmingham al llegar" }
       ],
       alert: "No hay transporte público tan temprano. Aircoach es la única opción segura"
     }
@@ -275,6 +278,18 @@ const DublinTripPlanner = () => {
                         <span className={`flex-1 ${checkedItems[task.id] ? 'line-through text-gray-400' : 'text-gray-700'}`}>
                           {task.text}
                         </span>
+                        {task.ticketUrl && (
+                          <a 
+                            href={task.ticketUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-purple-500 hover:text-purple-700 p-1"
+                            onClick={(e) => e.stopPropagation()}
+                            title="Comprar Tickets"
+                          >
+                            <Ticket size={18} />
+                          </a>
+                        )}
                         {task.mapUrl && (
                           <a 
                             href={task.mapUrl} 
